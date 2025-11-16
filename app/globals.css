@@ -178,7 +178,7 @@
     @apply text-24 font-semibold text-gray-900;
   }
 
-  .profile-email {
+  .profile-email{
     @apply text-16 font-normal text-gray-600;
   }
 
