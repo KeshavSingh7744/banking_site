@@ -26,6 +26,7 @@ import { Loader2 } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 import { getLoggedInUser, signIn , signUp } from "@/lib/actions/user.actions"
+import PlaidLink from "./PlaidLink"
 
 
 const AuthForm = ({ type,initialUser}: { type: string;initialUser?:any;}) => {
@@ -62,9 +63,26 @@ const AuthForm = ({ type,initialUser}: { type: string;initialUser?:any;}) => {
         try{
             // sign up with appwrite & create a plaid link token
 
+            
+
             if(type==='sign-up'){
 
-                const newUser = await signUp(data)
+                const userData = {
+                    firstName : data.firstName!,
+                    lastName : data.lastName!,
+                    address1 : data.address1!,
+                    city : data.city!,
+                    state : data.state!,
+                    postalCode : data.postalCode!,
+                    dateOfBirth : data.dateOfBirth!,
+                    ssn : data.ssn!,
+                    email : data.email,
+                    password : data.password,
+
+                    
+                }
+
+                const newUser = await signUp(userData)
                 console.log("newUser from server action: ", newUser);
                 setUser(newUser)
 
@@ -104,9 +122,9 @@ const AuthForm = ({ type,initialUser}: { type: string;initialUser?:any;}) => {
             </header>
             {user ? (
                 <div className="flex flex-col gap-4">
-                    {/* {plaid link} */}
+                    <PlaidLink user ={user} variant="primary"/>
                 </div>
-            ) : (
+             ) : ( 
                 <>
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
@@ -157,8 +175,6 @@ const AuthForm = ({ type,initialUser}: { type: string;initialUser?:any;}) => {
                                         </>
                                     ) : type === 'sign-in' ?
                                         'Sign In' : 'Sign Up'
-
-
                                     }
                                 </Button>
                             </div>
@@ -167,7 +183,6 @@ const AuthForm = ({ type,initialUser}: { type: string;initialUser?:any;}) => {
                         </form>
                     </Form>
                     <footer className="flex justify-center gap-1">
-                        <p className="text-14 font-normal text-gray-600"> {type === 'sign-in' ? 'Dont have an account?' : 'Already have an account'}</p>
                         <Link className="form-link" href={type === 'sign-in' ? '/sign-up' : '/sign-in'} >
 
                             {type === 'sign-in' ? 'Sign Up' : 'Sign In'}
