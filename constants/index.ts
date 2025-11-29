@@ -92,30 +92,7 @@ export const topCategoryStyles = {
 };
 
 export const transactionCategoryStyles = {
-  "Food and Drink": {
-    borderColor: "border-pink-600",
-    backgroundColor: "bg-pink-500",
-    textColor: "text-pink-700",
-    chipBackgroundColor: "bg-inherit",
-  },
-  Payment: {
-    borderColor: "border-success-600",
-    backgroundColor: "bg-green-600",
-    textColor: "text-success-700",
-    chipBackgroundColor: "bg-inherit",
-  },
-  "Bank Fees": {
-    borderColor: "border-success-600",
-    backgroundColor: "bg-green-600",
-    textColor: "text-success-700",
-    chipBackgroundColor: "bg-inherit",
-  },
-  Transfer: {
-    borderColor: "border-red-700",
-    backgroundColor: "bg-red-700",
-    textColor: "text-red-700",
-    chipBackgroundColor: "bg-inherit",
-  },
+  // ----- STATUSES -----
   Processing: {
     borderColor: "border-[#F2F4F7]",
     backgroundColor: "bg-gray-500",
@@ -128,6 +105,84 @@ export const transactionCategoryStyles = {
     textColor: "text-[#027A48]",
     chipBackgroundColor: "bg-[#ECFDF3]",
   },
+
+  // ----- CATEGORIES (Plaid values) -----
+  // Food & drink
+  "Food and Drink": {
+    borderColor: "border-pink-600",
+    backgroundColor: "bg-pink-500",
+    textColor: "text-pink-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+  "Food and drink": {
+    // Plaid usually returns this casing
+    borderColor: "border-pink-600",
+    backgroundColor: "bg-pink-500",
+    textColor: "text-pink-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+
+  // General payments / bank fees (green)
+  Payment: {
+    borderColor: "border-success-600",
+    backgroundColor: "bg-green-600",
+    textColor: "text-success-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+  "Bank Fees": {
+    borderColor: "border-success-600",
+    backgroundColor: "bg-green-600",
+    textColor: "text-success-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+  Income: {
+    borderColor: "border-success-600",
+    backgroundColor: "bg-green-600",
+    textColor: "text-success-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+  "Loan payments": {
+    borderColor: "border-success-600",
+    backgroundColor: "bg-green-600",
+    textColor: "text-success-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+
+  // Transfers (red)
+  Transfer: {
+    borderColor: "border-red-700",
+    backgroundColor: "bg-red-700",
+    textColor: "text-red-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+  "Transfer out": {
+    borderColor: "border-red-700",
+    backgroundColor: "bg-red-700",
+    textColor: "text-red-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+
+  // Travel / transportation / entertainment (blue)
+  Transportation: {
+    borderColor: "border-blue-600",
+    backgroundColor: "bg-blue-500",
+    textColor: "text-blue-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+  Travel: {
+    borderColor: "border-blue-600",
+    backgroundColor: "bg-blue-500",
+    textColor: "text-blue-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+  Entertainment: {
+    borderColor: "border-blue-600",
+    backgroundColor: "bg-blue-500",
+    textColor: "text-blue-700",
+    chipBackgroundColor: "bg-inherit",
+  },
+
+  // ----- FALLBACK -----
   default: {
     borderColor: "",
     backgroundColor: "bg-blue-500",
@@ -135,3 +190,5 @@ export const transactionCategoryStyles = {
     chipBackgroundColor: "bg-inherit",
   },
 };
+
+
